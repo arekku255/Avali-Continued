@@ -38,5 +38,8 @@
     <!-- Dependencies -->
     <Reference Include="$(WorkshopDir)\2009463077\1.7\Assemblies\0Harmony.dll" Private="false" />
     <Reference Include="$(WorkshopDir)\839005762\1.7\Assemblies\AlienRace.dll" Private="false" />
+    <!-- Multiplayer API (MIT, rwmt). Shipped next to Avali.dll; it is inert when Multiplayer is not loaded. -->
+    <Reference Include="lib\0MultiplayerAPI.dll" Private="false" />
+    <None Include="lib\0MultiplayerAPI.dll" CopyToOutputDirectory="PreserveNewest" Link="0MultiplayerAPI.dll" />
   </ItemGroup>
 </Project>

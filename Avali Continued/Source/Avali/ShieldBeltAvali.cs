@@ -204,7 +204,9 @@ namespace Avali
 					vector += this.impactAngleVect * num3;
 					num -= num3;
 				}
+				Rand.PushState();
 				float angle = (float)Rand.Range(0, 360);
+				Rand.PopState();
 				Vector3 s = new Vector3(num, 1f, num);
 				Matrix4x4 matrix = default(Matrix4x4);
 				matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);

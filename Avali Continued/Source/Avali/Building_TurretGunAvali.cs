@@ -501,7 +501,7 @@ namespace Avali
 		}
 
 		// Token: 0x060000CC RID: 204 RVA: 0x000080D8 File Offset: 0x000062D8
-		private void InterfaceChangeTurretShootDelay(float delay)
+		public void InterfaceChangeTurretShootDelay(float delay)
 		{
 			SoundDefOf.DragSlider.PlayOneShotOnCamera(null);
 			this.turretBurstCooldownTime = this.def.building.turretBurstCooldownTime;
@@ -543,10 +543,7 @@ namespace Avali
 				Command_Action command_Action3 = new Command_Action();
 				command_Action3.action = delegate()
 				{
-					this.turretBurstCooldownTime = this.defaultDelay;
-					this.def.building.turretBurstCooldownTime = this.turretBurstCooldownTime;
-					SoundDefOf.Tick_Tiny.PlayOneShotOnCamera(null);
-					MoteMaker.ThrowText(this.TrueCenter() + new Vector3(0.5f, 0f, 0.5f), base.Map, this.turretBurstCooldownTime.ToString(), Color.white, -1f);
+					this.ResetShootDelay();
 				};
 				command_Action3.defaultLabel = "CommandDefaultTurretShootDelay".Translate();
 				command_Action3.defaultDesc = "CommandDefaultTurretShootDelayDesc".Translate();
@@ -588,7 +585,7 @@ namespace Avali
 					alsoClickIfOtherInGroupClicked = false,
 					action = delegate()
 					{
-						GenPlace.TryPlaceThing(changeableProjectile.RemoveShell(), this.Position, this.Map, ThingPlaceMode.Near, null, null, default(Rot4));
+						this.ExtractShell();
 					}
 				};
 			}
@@ -633,11 +630,7 @@ namespace Avali
 				command_Toggle.hotKey = KeyBindingDefOf.Misc6;
 				command_Toggle.toggleAction = delegate()
 				{
-					this.holdFire = !this.holdFire;
-					if (this.holdFire)
-					{
-						this.ResetForcedTarget();
-					}
+					this.ToggleHoldFire();
 				};
 				command_Toggle.isActive = (() => this.holdFire);
 				yield return command_Toggle;
@@ -646,6 +639,33 @@ namespace Avali
 		}
 
 		// Token: 0x060000CE RID: 206 RVA: 0x00002782 File Offset: 0x00000982
+		// Multiplayer sync targets (registered in MultiplayerCompat)
+		public void ResetShootDelay()
+		{
+			this.turretBurstCooldownTime = this.defaultDelay;
+			this.def.building.turretBurstCooldownTime = this.turretBurstCooldownTime;
+			SoundDefOf.Tick_Tiny.PlayOneShotOnCamera(null);
+			MoteMaker.ThrowText(this.TrueCenter() + new Vector3(0.5f, 0f, 0.5f), base.Map, this.turretBurstCooldownTime.ToString(), Color.white, -1f);
+		}
+
+		public void ExtractShell()
+		{
+			CompChangeableProjectile changeableProjectile = this.gun.TryGetComp<CompChangeableProjectile>();
+			if (changeableProjectile != null && changeableProjectile.Loaded)
+			{
+				GenPlace.TryPlaceThing(changeableProjectile.RemoveShell(), this.Position, this.Map, ThingPlaceMode.Near, null, null, default(Rot4));
+			}
+		}
+
+		public void ToggleHoldFire()
+		{
+			this.holdFire = !this.holdFire;
+			if (this.holdFire)
+			{
+				this.ResetForcedTarget();
+			}
+		}
+
 		private void ResetForcedTarget()
 		{
 			this.forcedTarget = LocalTargetInfo.Invalid;
