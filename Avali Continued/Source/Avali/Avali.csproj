@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    RimWorld 1.7 build. The game runs on .NET 10 (Waylith CLR), so instead of relying on an
+    installed .NET 10 targeting pack we compile directly against the runtime assemblies the
+    game ships with. Set RimWorldDir / WorkshopDir if your install lives elsewhere.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>Avali</AssemblyName>
+    <RootNamespace>Avali</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoStdLib>true</NoStdLib>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <OutputPath>..\..\1.7\Assemblies\</OutputPath>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <NoWarn>$(NoWarn);CS0618;CS1701;CS1702</NoWarn>
+
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">D:\SteamLibrary\steamapps\common\RimWorld</RimWorldDir>
+    <WorkshopDir Condition="'$(WorkshopDir)' == ''">D:\SteamLibrary\steamapps\workshop\content\294100</WorkshopDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Runtime/framework assemblies shipped with the game -->
+    <Reference Include="$(RimWorldDir)\System.*.dll" Exclude="$(RimWorldDir)\System.IO.Compression.Native.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)\mscorlib.dll;$(RimWorldDir)\netstandard.dll;$(RimWorldDir)\System.dll" Private="false" />
+    <!-- Game -->
+    <Reference Include="$(RimWorldDir)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)\UnityStubs.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)\Waylith.dll" Private="false" />
+    <!-- Dependencies -->
+    <Reference Include="$(WorkshopDir)\2009463077\1.7\Assemblies\0Harmony.dll" Private="false" />
+    <Reference Include="$(WorkshopDir)\839005762\1.7\Assemblies\AlienRace.dll" Private="false" />
+  </ItemGroup>
+</Project>

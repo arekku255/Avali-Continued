@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- Well, hello there~ -->
+
+<AlienRace.AlienBackstoryDef>
+	<defName>NukoHero</defName>
+	<title>Young hero</title>
+	<titleShort>Young hero</titleShort>
+	<description>[PAWN_possessive] tribe was destroyed during a pirate raid. [PAWN_nameDef] and [PAWN_possessive] packmates were captured. [PAWN_pronoun] managed to break free and release the rest. Together they killed the small crew and captured the ship which transported them.</description>
+	<slot>Childhood</slot>
+  <bodyTypeGlobal>Thin</bodyTypeGlobal>
+	<maleCommonality>0</maleCommonality>
+	<femaleCommonality>100</femaleCommonality>
+	<spawnCategories>
+		<li>AvaliNukoBackstory</li>
+	</spawnCategories>
+	<skillGains>
+		<Shooting>6</Shooting>
+		<Melee>6</Melee>
+	</skillGains>
+  <forcedTraits>
+    <Abrasive>0</Abrasive>
+    <Bloodlust>0</Bloodlust>
+  </forcedTraits>
+  <forcedHediffs>
+    <li>AvaliBiology</li>
+  </forcedHediffs>
+</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef>
+	<defName>NukoProtector</defName>
+  <title>Grand protector</title>
+	<titleShort>Grand protector</titleShort>
+	<description>[PAWN_nameDef] was the first Avali protector. On [PAWN_possessive] graduation day unknown entity attacked Earth. [PAWN_nameDef] lost all their pack but was able to escape from the Earth before it was annihilated. After some time [PAWN_pronoun] tracked down the monster and killed it, thereby saving the galaxy and avenging [PAWN_possessive] pack.\nDuring the exploration of ancient precursor civilization ruins [PAWN_objective] found some sort of transdimensional transportation device, activated it and found himself on this rimworld.</description>
+	<slot>Adulthood</slot>
+  <bodyTypeGlobal>Thin</bodyTypeGlobal>
+	<maleCommonality>0</maleCommonality>
+	<femaleCommonality>100</femaleCommonality>
+	<spawnCategories>
+		<li>AvaliNukoBackstory</li>
+	</spawnCategories>
+  <forcedTraits>
+    <Psychopath>0</Psychopath>
+  </forcedTraits>
+	<skillGains>
+		<Shooting>10</Shooting>
+		<Melee>10</Melee>
+		<Social>-10</Social>
+		<Animals>0</Animals>
+		<Medicine>10</Medicine>
+		<Cooking>10</Cooking>
+		<Construction>10</Construction>
+		<Plants>8</Plants>
+		<Mining>10</Mining>
+		<Artistic>10</Artistic>
+		<Crafting>10</Crafting>
+		<Intellectual>10</Intellectual>
+	</skillGains>
+</AlienRace.AlienBackstoryDef>
+
+
+<AlienRace.PawnBioDef>
+    <defName>AvaliNuko</defName>
+    <childhood>NukoHero</childhood>
+    <adulthood>NukoProtector</adulthood>
+    <gender>Female</gender>
+    <name>
+      <first>Nuko</first>
+      <last>Sharptalon</last>
+      <nick>Nuko</nick>
+    </name>
+    <factionLeader>true</factionLeader>
+    <validRaces>
+      <li>Avali</li>
+    </validRaces>
+    <forcedHediffs>
+      <li>GuardianNanites</li>
+      <li>ImmunityNanites</li>
+      
+      <li>AvaliSightAugment</li>
+      <li>AvaliSightAugment</li>
+      <li>AvaliHearingAugment</li>
+      <li>AvaliHearingAugment</li>
+      <li>AvaliHearingAugment</li>
+      <li>AvaliHearingAugment</li>
+      <li>AvaliCoolAugment</li>
+      <li>AvaliHeatAugment</li>
+      <li>AvaliPackLossAugment</li>
+      
+      <li>PlasteelAvaliTalons</li>
+      <li>PlasteelAvaliTalons</li>
+      <li>PlasteelAvaliTalons</li>
+      <li>PlasteelAvaliTalons</li>
+      
+      <li>CyberneticAvaliHead</li>
+      <li>CyberneticAvaliBody</li>
+      <li>CyberneticAvaliLeg</li>
+      <li>CyberneticAvaliLeg</li>
+      <li>CyberneticAvaliArm</li>
+      <li>CyberneticAvaliArm</li>
+      <li>CyberneticAvaliTail</li>
+    </forcedHediffs>
+</AlienRace.PawnBioDef>
+</Defs>
