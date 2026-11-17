@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Avali Continued [1.7]</name>
-	<author>Erisss, FacePlus, Ksisa, XY78</author>
-	<supportedVersions>
-    <li>1.1</li>
-    <li>1.2</li>
+  <name>Avali Continued (1.7)</name>
+  <author>arekku255 (1.7 update); Erisss, FacePlus, Ksisa, XY78</author>
+  <packageId>arekku255.AvaliContinued</packageId>
+  <url>https://github.com/arekku255/Avali-Continued</url>
+  <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <packageId>Erisss.Ksisa.Avali</packageId>
-	<description>Adds to the game Avali race - race of small fluffy nomadic pack hunters with bad temper and a specific comfort temperature range. If you're more interested in the lore, check out the Avali wiki https://avali.fandom.com/wiki/The_Official_Avali_Wiki
+  <description>Adds the Avali race to RimWorld: small, fluffy, nomadic pack hunters with a bad temper and a love of the cold. If you're interested in the lore, check out the Avali wiki: https://avali.fandom.com/wiki/The_Official_Avali_Wiki
 
-C# and XML code by Erisss
-Graphics by FacePlus
-Formerly maintained by Ksisa
-Currently maintained by Chennex/XY78
-Avali race by RyuujinZERO
+This is an update of Avali Continued for RimWorld 1.7.
 
+Features
+ - Avali race with their own biology: packs that bond and buff each other, egg laying and kits, cold-adapted temperature range, and Avali-specific thoughts.
+ - Avali factions, traders, pawn kinds and a "Lost Pack" start scenario.
+ - Avali buildings, furniture, weapons, apparel, implants, food and research.
 
-The mod is an edit to the Avali mod https://steamcommunity.com/sharedfiles/filedetails/?id=1314474881
+1.7 update
+ - Rebuilt for RimWorld 1.7 and current Humanoid Alien Races.
+ - Ideology support (factions have cultures; fixes starting with no colonists).
+ - Multiplayer: turret and weapon buttons are synced; no desyncing randomness in drawing code.
+ - Fixes for several old bugs (unpowered holo TV / karaoke errors, silent precursor guns, female tail graphic).
 
-There are a few kinks that still need to be worked out:
-Some backstories have placeholder text.
-Lovin' does not currently happen.
-Small meals do not seem to ever rot.
+Requires Harmony and Humanoid Alien Races. Not compatible with the older Avali Continued [1.2] being active at the same time.
 
-If you run into any issues besides these, please report these on the issues page of the github here: https://github.com/Chennex/Avali-Continued/issues
+Known issues carried over from the original: some backstories have placeholder text.
 
-If you want to join in development, hit me up.
-</description>
+Credits
+ - C# and XML code by Erisss
+ - Graphics by FacePlus
+ - Formerly maintained by Ksisa and Chennex/XY78
+ - Avali race by RyuujinZERO
+ - RimWorld 1.7 update by arekku255
+
+Licensed under the GNU GPL v3. Source code and issue tracker: https://github.com/arekku255/Avali-Continued</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
@@ -37,17 +43,18 @@ If you want to join in development, hit me up.
     </li>
     <li>
       <packageId>erdelf.HumanoidAlienRaces</packageId>
-      <displayName>Humanoid Alien Races 2.0</displayName>
+      <displayName>Humanoid Alien Races</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
     </li>
   </modDependencies>
-  <loadBefore>
-  </loadBefore>
+  <incompatibleWith>
+    <li>Erisss.Ksisa.Avali</li>
+  </incompatibleWith>
   <loadAfter>
     <li>brrainz.harmony</li>
     <li>erdelf.HumanoidAlienRaces</li>
     <li>eagle0600.massCooking</li>
     <li>eagle0600.expandablePlants</li>
     <li>postrobcore.feedthecolonists</li>
-	</loadAfter>
+  </loadAfter>
 </ModMetaData>
