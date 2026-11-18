@@ -287,6 +287,8 @@
     <holdsRoof>false</holdsRoof>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
     <canOverlapZones>false</canOverlapZones>
+    <!-- Drag to place; defaults to filled rectangle, also offers outline/oval/line. -->
+    <drawStyleCategory>Default2D</drawStyleCategory>
     <fertility>2.5</fertility>
     <building>
       <defaultPlantToGrow>Plant_Rice</defaultPlantToGrow>
