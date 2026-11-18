@@ -61,6 +61,7 @@
     <designationCategory>Power</designationCategory>
     <constructEffect>ConstructMetal</constructEffect>
     <clearBuildingArea>false</clearBuildingArea>
+    <drawStyleCategory>Conduits</drawStyleCategory>
     <designationHotKey>Misc1</designationHotKey>
     <researchPrerequisites>
       <li>Electricity</li>
