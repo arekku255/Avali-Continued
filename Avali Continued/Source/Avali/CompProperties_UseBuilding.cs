@@ -1,10 +1,11 @@
 using System;
+using RimWorld;
 using Verse;
 
 namespace Avali
 {
 	// Token: 0x02000033 RID: 51
-	public class CompProperties_UseBuilding : CompProperties
+	public class CompProperties_UseBuilding : CompProperties_Mannable
 	{
 		// Token: 0x06000114 RID: 276 RVA: 0x000029B5 File Offset: 0x00000BB5
 		public CompProperties_UseBuilding()
