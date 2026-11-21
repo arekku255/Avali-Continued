@@ -186,12 +186,14 @@
 -->
               <colorChannel>skin</colorChannel> <!-- 1.2 bRektFest -->
               <offsets>
-                <south />
+                <south>
+                  <offset>(0, -0.3)</offset>
+                </south>
                 <north>
-                  <offset>(0, -0.1)</offset>
+                  <offset>(0, -0.4)</offset>
                 </north>
                 <east>
-                  <offset>(-0.1, 0)</offset>
+                  <offset>(0.2, -0.3)</offset>
                 </east>
               </offsets>
             </li>
