@@ -15,5 +15,15 @@
     <li>AvaliSpacer</li>
 	</apparelTags>
 	<apparelMoney>500~1800</apparelMoney>
+  <!-- Every starting Avali wears a plasteel life support belt. -->
+  <apparelRequired>
+    <li>Apparel_LifeSupportBeltAvali</li>
+  </apparelRequired>
+  <specificApparelRequirements>
+    <li>
+      <apparelDef>Apparel_LifeSupportBeltAvali</apparelDef>
+      <stuff>Plasteel</stuff>
+    </li>
+  </specificApparelRequirements>
 </PawnKindDef>
 </Defs>

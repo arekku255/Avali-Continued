@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Lets Humanoid Alien Races offer Avali in the starting-pawn race menu,
+       so a vanilla start can mix Avali with humans and other alien races. -->
+  <AlienRace.RaceSettings>
+    <defName>Avali_RaceSettings</defName>
+    <pawnKindSettings>
+      <startingColonists>
+        <li>
+          <pawnKindEntries>
+            <li>
+              <kindDefs>
+                <li>Avali</li>
+              </kindDefs>
+              <!-- 0: only when picked in the race menu, never on a random reroll. -->
+              <chance>0</chance>
+            </li>
+          </pawnKindEntries>
+          <factionDefs>
+            <li>PlayerColony</li>
+            <li>PlayerTribe</li>
+          </factionDefs>
+        </li>
+      </startingColonists>
+    </pawnKindSettings>
+  </AlienRace.RaceSettings>
+</Defs>

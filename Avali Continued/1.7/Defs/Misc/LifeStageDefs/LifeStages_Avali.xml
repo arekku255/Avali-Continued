@@ -9,6 +9,33 @@
 		<drawSize>1</drawSize>
 	</silhouetteGraphicData>
 	<label>kit</label>
+  <!-- Biotech baby behavior, mirrored from vanilla HumanlikeBaby. -->
+  <developmentalStage>Baby</developmentalStage>
+  <foodMaxFactor>0.625</foodMaxFactor>
+  <meleeDamageFactor>0.5</meleeDamageFactor>
+  <fallAsleepMaxThresholdOverride>.60</fallAsleepMaxThresholdOverride>
+  <naturalWakeThresholdOverride>1.0</naturalWakeThresholdOverride>
+  <alwaysDowned>true</alwaysDowned>
+  <claimable>true</claimable>
+  <involuntarySleepIsNegativeEvent>false</involuntarySleepIsNegativeEvent>
+  <thinkTreeMainOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBaby</thinkTreeMainOverride>
+  <thinkTreeConstantOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBabyConstant</thinkTreeConstantOverride>
+  <canDoRandomMentalBreaks>false</canDoRandomMentalBreaks>
+  <canSleepWhileHeld>true</canSleepWhileHeld>
+  <canVoluntarilySleep>false</canVoluntarilySleep>
+  <canSleepWhenStarving>false</canSleepWhenStarving>
+  <canInitiateSocialInteraction>false</canInitiateSocialInteraction>
+  <customMoodTipString>Mood represents how happy or stressed someone is. Kits with low mood are more likely to cry, while kits with a high mood are more likely to giggle.</customMoodTipString>
+  <involuntarySleepMTBDaysFromRest>
+    <points>
+      <li>(.00, 0)</li>
+      <li>(.01, .01)</li>
+      <li>(.15, .166)</li>
+      <li>(.30, 1)</li>
+      <li>(.59, 10)</li>
+      <li>(.60, Infinity)</li>
+    </points>
+  </involuntarySleepMTBDaysFromRest>
   <voxPitch>1</voxPitch>
   <voxVolume>1</voxVolume>
 	<bodySizeFactor>0.2</bodySizeFactor>
@@ -30,6 +57,10 @@
 		<drawSize>1</drawSize>
 	</silhouetteGraphicData>
 	<label>kit</label>
+  <!-- Biotech child behavior, mirrored from vanilla HumanlikeChild. -->
+  <developmentalStage>Child</developmentalStage>
+  <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeChild</workerClass>
+  <meleeDamageFactor>0.7</meleeDamageFactor>
   <voxPitch>1</voxPitch>
   <voxVolume>1</voxVolume>
 	<bodySizeFactor>0.4</bodySizeFactor>
@@ -51,6 +82,7 @@
 		<drawSize>1</drawSize>
 	</silhouetteGraphicData>
 	<label>adult</label>
+  <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeAdult</workerClass>
   <voxPitch>1</voxPitch>
   <voxVolume>1</voxVolume>
   <bodySizeFactor>0.5</bodySizeFactor>
@@ -72,6 +104,7 @@
 		<drawSize>1</drawSize>
 	</silhouetteGraphicData>
 	<label>adult</label>
+  <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeAdult</workerClass>
 	<visible>false</visible>
 	<reproductive>true</reproductive>
 </LifeStageDef>

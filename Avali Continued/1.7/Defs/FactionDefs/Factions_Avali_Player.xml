@@ -33,6 +33,7 @@
 	<apparelStuffFilter>
     <thingDefs>
       <li>AvaliNanoFibre</li>
+      <li>Plasteel</li> <!-- for the starting life support belt -->
     </thingDefs>
 	</apparelStuffFilter>
   <colorSpectrum>
